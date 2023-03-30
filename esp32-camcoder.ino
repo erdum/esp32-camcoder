@@ -89,9 +89,9 @@ void setup() {
   // XGA  1280x768  ~100kb ~38000 pictures ~31h @ 3s |  ~20hr @ 2s | ~10hr @ 1s
   // SVGA  800x600   ~60kb ~63300 pictures ~52h @ 3s |  ~34hr @ 2s | ~17hr @ 1s
   // VGA   640x480   ~40kb ~95000 pictures ~79h @ 3s |  ~52hr @ 2s | ~26hr @ 1s
-  config.frame_size = FRAMESIZE_UXGA;
+  config.frame_size = FRAMESIZE_SVGA;
   config.jpeg_quality = 10;
-  config.fb_count = 2;
+  config.fb_count = 1;
 
   // Init Camera
   esp_err_t err = esp_camera_init(&config);
@@ -129,6 +129,5 @@ void loop() {
     }
     esp_camera_fb_return(fb);
   }
-  delay(250);
   digitalWrite(LED_1, HIGH);
 }
